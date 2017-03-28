@@ -1,6 +1,6 @@
 # Xamarin-Parking-Zurich
 
-Xamarin XAML Forms Sample App that uses a DataTemplateSelector which uses a DataTemplate at runtime per item in a ListView.ItemsSource. All of the project's UI and logic is contained in a portable class library that is shared across all OS heads. The UI code is written in Xamarin XAML Forms.
+Xamarin-Parking-Zurich is a Xamarin XAML Forms Sample App that uses a DataTemplateSelector which uses a DataTemplate at runtime per item in a ListView.ItemsSource. All of the project's UI and logic is contained in a portable class library that is shared across all OS heads. The UI code is written in Xamarin XAML Forms.
 
 The app lists parkings in Zurich and their number of currently available parking places. The data is pulled from the RSS feed of the Zurich Parkleitsystem at http://www.pls-zh.ch/plsFeed/rss
 
