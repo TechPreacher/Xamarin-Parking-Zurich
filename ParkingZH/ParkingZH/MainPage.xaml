@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ParkingZH.MainPage"
+             xmlns:local="clr-namespace:ParkingZH;assembly=DataTemplateSelector">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <local:MyDataTemplateSelector x:Key="ParkingTemplateSelector"></local:MyDataTemplateSelector>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <RelativeLayout>
+  <ListView x:Name="ParkingsListView" 
+            ItemTemplate="{StaticResource ParkingTemplateSelector}" 
+            ItemsSource="{Binding Parkings}"
+            HasUnevenRows="True" 
+            ItemSelected="MyListView_OnItemSelected"
+            ItemTapped="MyListView_OnItemTapped"
+            SeparatorVisibility="None"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=0}">
+   </ListView>
+    <Grid x:Name="ParkingControls" RowSpacing="1" ColumnSpacing="2" Padding="5"
+          BackgroundColor="#EFEFF4"
+          VerticalOptions="FillAndExpand"
+          HorizontalOptions="FillAndExpand"
+          RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=ParkingsListView, Property=Height,Factor=.91,Constant=0}"
+          RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+          RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView, ElementName=ParkingsListView, Property=Height,Factor=.09,Constant=0}">
+      <Button Text="Refresh" Command="{Binding SendCommand}"></Button>
+    </Grid>
+
+  </RelativeLayout>
+</ContentPage>
